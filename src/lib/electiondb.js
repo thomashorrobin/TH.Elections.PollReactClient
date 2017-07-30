@@ -12,18 +12,7 @@ export function getParties(cb) {
 
 export function getPollsLimt(limit, cb) {
     let polls_limited_path = polls_path + '?limit=' + limit;
-    fetch(polls_limited_path).then(response => response.json()).then(json => {
-        if(json){
-            if (json.length > 0) {
-                console.debug('Successfully connected to ' + polls_limited_path);
-                cb(json);
-            } else {
-                console.warn('Zero results returned from ' + polls_limited_path);
-            }
-        } else {
-            console.error('something bad happened when calling ' + polls_limited_path);
-        }
-    });
+    fetch(polls_limited_path).then(response => response.json()).then(json => cb(json));
 }
 
 export function getData(cb){
