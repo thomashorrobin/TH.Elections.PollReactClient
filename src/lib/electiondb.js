@@ -1,4 +1,4 @@
-const host = process.env.REACT_APP_ELECTIONDB_HOST;
+const host = 'http://thelectionspollsapi20170719063733.azurewebsites.net'
 const polls_path = host + '/api/polls';
 const parties_path = host + '/api/parties?all=false';
 
